@@ -1,0 +1,100 @@
+// ...existing code...
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>个人主页 - 名字</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">名字<span class="brand-dot">.</span></div>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+        <button id="themeToggle" class="icon-btn" aria-label="切换主题">🌓</button>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-decor"></div>
+      <div class="container hero-inner">
+        <div class="avatar" aria-hidden="true">N</div>
+        <div class="hero-content">
+          <h1 class="reveal">你好，我是 <span class="accent">名字</span></h1>
+          <p class="lead reveal">前端开发 · 设计爱好者 · 喜欢简洁与可维护的代码</p>
+          <p class="actions reveal">
+            <a class="btn" href="#projects">查看项目</a>
+            <a class="btn ghost" href="#contact">联系我</a>
+          </p>
+
+          <div class="social reveal">
+            <a href="#" aria-label="GitHub" class="social-link" title="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.4.7-4.1-1.5-4.1-1.5-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.6-.8 1.6-.8.9-1.6 2.4-1.1 3-.8.1-.7.4-1.1.8-1.4-2.7-.3-5.6-1.3-5.6-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.4 0 0 1-.3 3.3 1.2a11.2 11.2 0 016 0C18 4 19 4.3 19 4.3c.6 1.8.2 3.1.1 3.4.7.8 1.2 1.9 1.2 3.2 0 4.6-2.9 5.5-5.7 5.8.4.4.7 1 .7 2v3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>
+            </a>
+            <a href="#" aria-label="邮件" class="social-link" title="邮箱">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2 6.5V18a2 2 0 002 2h16a2 2 0 002-2V6.5L12 12 2 6.5zM12 10L2 5.5V6l10 4 10-4v-.5L12 10z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <h2 class="section-title">关于我</h2>
+      <p class="reveal">一句简短的自我介绍：专注前端开发与产品实现。喜欢用简洁的工具链和清晰的结构做可靠的网站。</p>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2 class="section-title">项目</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <h3>项目 A</h3>
+          <p class="muted">React / TypeScript · 简介性描述，突出亮点</p>
+          <p><a href="#" class="link">查看详情 →</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h3>项目 B</h3>
+          <p class="muted">纯静态 / 优化 · 小型项目演示</p>
+          <p><a href="#" class="link">查看详情 →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2 class="section-title">联系我</h2>
+      <p class="reveal">邮箱: <a href="mailto:your@email.com">your@email.com</a></p>
+
+      <form class="contact-form reveal" action="#" onsubmit="alert('示例表单，不会提交'); return false;">
+        <div class="row">
+          <input type="text" name="name" placeholder="姓名" required>
+          <input type="email" name="email" placeholder="邮箱" required>
+        </div>
+        <textarea name="message" placeholder="留言" required></textarea>
+        <div class="form-actions">
+          <button class="btn" type="submit">发送</button>
+          <button class="btn ghost" type="reset">重置</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2025 名字 · 简洁个人主页模板</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
+// ...existing code...
