@@ -4,10 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061226">
   <title>个人主页 - 名字</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="website.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">名字<span class="brand-dot">.</span></div>
@@ -23,14 +28,14 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="hero-decor"></div>
       <div class="container hero-inner">
         <div class="avatar" aria-hidden="true">N</div>
         <div class="hero-content">
-          <h1 class="reveal">你好，我是 <span class="accent">名字</span></h1>
-          <p class="lead reveal">前端开发 · 设计爱好者 · 喜欢简洁与可维护的代码</p>
+          <h1 class="reveal">你好，我是 <span class="accent">Rocky</span></h1>
+          <p class="lead reveal">来自CNC_803_Rocky</p>
           <p class="actions reveal">
             <a class="btn" href="#projects">查看项目</a>
             <a class="btn ghost" href="#contact">联系我</a>
@@ -88,13 +93,14 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <small>© 2025 名字 · 简洁个人主页模板</small>
     </div>
   </footer>
-
-  <script src="assets/js/main.js" defer></script>
+</body>
+  <script src="document.js" defer></script>
+</html>
 </body>
 </html>
 // ...existing code...
