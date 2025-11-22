@@ -1,20 +1,13 @@
-// ...existing code...
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
-  const themeToggle = document.getElementById('themeToggle');
 
-  navToggle?.addEventListener('click', () => nav.classList.toggle('show'));
+  // 导航菜单切换
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => nav.classList.toggle('show'));
+  }
 
-  // 主题切换并保存
-  const saved = localStorage.getItem('site-theme');
-  if (saved === 'light') document.body.classList.add('light');
-
-  themeToggle?.addEventListener('click', () => {
-    document.body.classList.toggle('light');
-    const isLight = document.body.classList.contains('light');
-    localStorage.setItem('site-theme', isLight ? 'light' : 'dark');
-  });
+  // 移除对不存在元素的引用，避免JavaScript错误
 
   // 平滑滚动（支持锚点）
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -29,16 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 简单的滚动 reveal 动画（IntersectionObserver）
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold: 0.12});
-
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  // 直接显示所有元素，避免IntersectionObserver可能导致的问题
+  document.querySelectorAll('.apple-fade-in').forEach(el => {
+    el.classList.add('apple-visible');
+  });
 });
-// ...existing code...
