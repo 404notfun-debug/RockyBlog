@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff">
+  <title>周杰伦专辑 - Rocky</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <!-- SF Pro Display Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="website.css">
+  <style>
+    /* 专辑列表特有样式 */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .album-card {
+      background: var(--apple-white);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--apple-border);
+    }
+    
+    .album-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .album-year {
+      font-size: 14px;
+      color: var(--apple-secondary);
+      margin-bottom: 8px;
+    }
+    
+    .album-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      color: var(--apple-primary);
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background: var(--apple-primary);
+      color: white;
+      border-radius: 22px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      background: var(--apple-hover);
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+      .album-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  
+  <!-- Apple-style Navigation -->
+  <header class="apple-nav">
+    <div class="nav-content">
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-container">
+            <img src="IMG_2960.GIF" alt="Logo" class="nav-logo-gif">
+            <span>Rocky</span>
+          </div>
+        </a>
+        <a href="index.html#about">关于</a>
+        <a href="index.html#projects">资源</a>
+        <a href="index.html#contact">联系</a>
+      </nav>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section for Jay Chou -->
+    <section class="apple-hero" style="padding: 80px 0 40px;">
+      <div class="container">
+        <h1 class="apple-large-title apple-fade-in">周杰伦 Jay Chou</h1>
+        <p class="apple-subtitle apple-fade-in apple-fade-in-delay-1">音乐专辑合集</p>
+      </div>
+    </section>
+
+    <!-- Album List Section -->
+    <section class="apple-section">
+      <div class="container">
+        <h2 class="apple-section-title apple-fade-in">专辑列表</h2>
+        <p class="apple-content apple-fade-in apple-fade-in-delay-1">以下是周杰伦的经典专辑合集，按发行年份排序：</p>
+        
+        <div class="album-grid apple-fade-in apple-fade-in-delay-2">
+          <!-- 2000 -->
+          <div class="album-card">
+            <div class="album-year">2000.11</div>
+            <h3 class="album-title">Jay</h3>
+            <p>周杰伦首张同名专辑，包含《可爱女人》、《星晴》等经典歌曲。</p>
+            <a href="周杰伦/2000.11-Jay.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2001 -->
+          <div class="album-card">
+            <div class="album-year">2001.09</div>
+            <h3 class="album-title">范特西 Fantasy</h3>
+            <p>第二张专辑，收录《双截棍》、《简单爱》等代表作。</p>
+            <a href="周杰伦/2001.09-范特西.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2002 -->
+          <div class="album-card">
+            <div class="album-year">2002.07</div>
+            <h3 class="album-title">八度空间</h3>
+            <p>第三张专辑，包含《半岛铁盒》、《龙拳》等歌曲。</p>
+            <a href="周杰伦/2002.07-八度空间.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2003 -->
+          <div class="album-card">
+            <div class="album-year">2003.07</div>
+            <h3 class="album-title">叶惠美</h3>
+            <p>第四张专辑，收录《晴天》、《以父之名》等经典。</p>
+            <a href="周杰伦/2003.07-叶惠美.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2004 -->
+          <div class="album-card">
+            <div class="album-year">2004.08</div>
+            <h3 class="album-title">七里香</h3>
+            <p>第五张专辑，同名歌曲《七里香》广为传唱。</p>
+            <a href="周杰伦/2004.08-七里香.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2005 -->
+          <div class="album-card">
+            <div class="album-year">2005.11</div>
+            <h3 class="album-title">十一月的萧邦</h3>
+            <p>第六张专辑，收录《夜曲》、《发如雪》等歌曲。</p>
+            <a href="周杰伦/2005.11-十一月的萧邦.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2006 -->
+          <div class="album-card">
+            <div class="album-year">2006.12</div>
+            <h3 class="album-title">黄金甲</h3>
+            <p>专辑同名歌曲为电影《满城尽带黄金甲》主题曲。</p>
+            <a href="周杰伦/2006.12-黄金甲.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2008 -->
+          <div class="album-card">
+            <div class="album-year">2008.01</div>
+            <h3 class="album-title">大灌篮 电影原声带</h3>
+            <p>电影《大灌篮》的原声音乐专辑。</p>
+            <a href="周杰伦/2008.01-大灌篮 电影原声带.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2008 -->
+          <div class="album-card">
+            <div class="album-year">2008.10</div>
+            <h3 class="album-title">魔杰座</h3>
+            <p>专辑收录《稻香》、《给我一首歌的时间》等歌曲。</p>
+            <a href="周杰伦/2008.10-魔杰座.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+          
+          <!-- 2022 -->
+          <div class="album-card">
+            <div class="album-year">2022.07</div>
+            <h3 class="album-title">最伟大的作品</h3>
+            <p>最新专辑，同名歌曲《最伟大的作品》展现音乐才华。</p>
+            <a href="周杰伦/2022.07-最伟大的作品.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+          </div>
+        </div>
+        
+        <div class="center-button">
+          <a href="index.html" class="back-button">返回主页</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Apple-style Footer -->
+  <footer class="apple-footer">
+    <div class="container">
+      <div class="apple-footer-content">
+        <p>© 2025 Rocky. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 移动设备菜单切换
+    document.getElementById('navToggle').addEventListener('click', function() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('show');
+    });
+    
+    // 淡入动画实现
+    function checkVisibility() {
+      const elements = document.querySelectorAll('.apple-fade-in');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('apple-visible');
+        }
+      });
+    }
+    
+    // 监听滚动事件
+    window.addEventListener('scroll', checkVisibility);
+    // 初始检查
+    checkVisibility();
+    
+    // 导航栏滚动效果
+    const nav = document.querySelector('.apple-nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.classList.add('apple-nav-scroll');
+        nav.style.background = 'rgba(255, 255, 255, 0.8)';
+        nav.style.backdropFilter = 'blur(15px)';
+        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+      } else {
+        nav.style.background = 'var(--apple-white)';
+        nav.style.backdropFilter = 'blur(10px)';
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
