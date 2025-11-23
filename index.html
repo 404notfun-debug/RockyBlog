@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff">
+  <title>Rocky</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <!-- SF Pro Display Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="website.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  
+  <!-- Apple-style Navigation -->
+  <header class="apple-nav">
+    <div class="nav-content">
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-container">
+            <img src="IMG_2960.GIF" alt="Logo" class="nav-logo-gif">
+            <span>Rocky</span>
+          </div>
+        </a>
+        <a href="#about">关于</a>
+        <a href="#projects">资源</a>
+        <a href="#contact">联系</a>
+      </nav>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section - Apple Style -->
+    <section class="apple-hero">
+      <div class="container">
+        <div class="apple-large-title-container apple-fade-in">
+          <img src="IMG_2960.GIF" alt="动图" class="apple-title-gif">
+          <h1 class="apple-large-title">Rocky</h1>
+        </div>
+        <p class="apple-subtitle apple-fade-in apple-fade-in-delay-1">来自CNC</p>
+        <div class="apple-cta apple-fade-in apple-fade-in-delay-2">
+          <a href="#projects" class="apple-btn apple-pulse">了解我的资源</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="apple-section">
+      <div class="container">
+        <h2 class="apple-section-title apple-fade-in">关于我</h2>
+        <div class="apple-content apple-fade-in apple-fade-in-delay-1">
+          <p>我是Rocky，来自VHHS_G8。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="apple-section">
+      <div class="container">
+        <h2 class="apple-section-title">资源</h2>
+        <div class="apple-grid">
+          <div class="apple-card apple-fade-in apple-micro-interaction">
+            <h3 class="apple-card-title">资源 A</h3>
+            <p class="apple-card-desc">使用React和TypeScript构建的现代化应用，注重用户体验和性能优化。</p>
+            <a href="#" class="apple-link apple-link-underline">了解更多 <span>→</span></a>
+          </div>
+
+          <div class="apple-card apple-fade-in apple-fade-in-delay-1 apple-micro-interaction">
+            <h3 class="apple-card-title">资源 B</h3>
+            <p class="apple-card-desc">纯静态网站资源，展示了高效的CSS技巧和响应式设计原则。</p>
+            <a href="#" class="apple-link apple-link-underline">了解更多 <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="apple-section">
+      <div class="container">
+        <h2 class="apple-section-title apple-fade-in">联系我</h2>
+        <div class="apple-content apple-fade-in apple-fade-in-delay-1">
+          <p>邮箱: <a href="mailto:hqwer2022@outlook.com" class="apple-link">hqwer2022@outlook.com</a></p>
+        </div>
+
+        <form class="apple-form apple-fade-in apple-fade-in-delay-2" action="mailto:hqwer2022@outlook.com" method="post" enctype="text/plain">
+          <div class="apple-form-row">
+            <div class="apple-form-group">
+              <input type="text" name="name" placeholder="姓名" required>
+            </div>
+            <div class="apple-form-group">
+              <input type="email" name="email" placeholder="邮箱" required>
+            </div>
+          </div>
+          <div class="apple-form-group">
+            <textarea name="message" placeholder="留言" required></textarea>
+          </div>
+          <button class="apple-btn apple-btn-full apple-micro-interaction" type="submit">发送</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Apple-style Footer -->
+  <footer class="apple-footer">
+    <div class="container">
+      <div class="apple-footer-content">
+        <p>© 2025 Rocky. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 移动设备菜单切换
+    document.getElementById('navToggle').addEventListener('click', function() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('show');
+    });
+    
+    // 淡入动画实现
+    function checkVisibility() {
+      const elements = document.querySelectorAll('.apple-fade-in');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('apple-visible');
+        }
+      });
+    }
+    
+    // 监听滚动事件
+    window.addEventListener('scroll', checkVisibility);
+    // 初始检查
+    checkVisibility();
+    
+    // 导航栏滚动效果
+    const nav = document.querySelector('.apple-nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.classList.add('apple-nav-scroll');
+        nav.style.background = 'rgba(255, 255, 255, 0.8)';
+        nav.style.backdropFilter = 'blur(15px)';
+        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+      } else {
+        nav.style.background = 'var(--apple-white)';
+        nav.style.backdropFilter = 'blur(10px)';
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+  <script src="document.js" defer></script>
+</html>
+</body>
+</html>
