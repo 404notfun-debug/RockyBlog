@@ -154,7 +154,7 @@
             <p>周杰伦首场演唱会现场录音专辑。</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: e8bd15cc4998d737b0d1b36861b496abd85231404418ab4342c20e526a1d1030</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 213 MB</p>
-            <a href="2002.10-The.One.Live.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+            <a href="2002.10-The One演唱会 Live.rar" class="apple-link apple-link-underline" download>下载专辑</a>
           </div>
           
           <!-- 2003 -->
@@ -264,7 +264,7 @@
             <p>超时代演唱会现场录音专辑。</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: eb4311ec67d9bd5ea3980e3a5aade766468a0c5f555ddb0d6d5d82f499f2e839</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 239 MB</p>
-            <a href="2011.01-The.Era.2010.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+            <a href="2011.01-The Era 2010 超时代演唱会.rar" class="apple-link apple-link-underline" download>下载专辑</a>
           </div>
           
           <!-- 2011 -->
@@ -294,7 +294,7 @@
             <p>地表最强世界巡回演唱会现场录音专辑。</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 060dbe59fbfd7ee1cda39024821021a6fbd861e8204573fb5d603f975fb829e5</p>
             <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 206 MB</p>
-            <a href="2019.11-地表最强世界巡回演唱会.Live.rar" class="apple-link apple-link-underline" download>下载专辑</a>
+            <a href="2019.11-地表最强世界巡回演唱会 Live.rar" class="apple-link apple-link-underline" download>下载专辑</a>
           </div>
           
           <!-- 2022 -->
@@ -325,6 +325,20 @@
     </section>
   </main>
 
+  <!-- Verification Modal -->
+  <div id="verifyModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+    <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+      <h3 style="margin-top: 0; color: var(--apple-primary);">下载验证</h3>
+      <p>请输入以下SHA256校验码的前8位进行验证：</p>
+      <p id="verifyHash" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px; margin: 10px 0;"></p>
+      <input type="text" id="verifyInput" placeholder="输入校验码前8位" style="width: 100%; padding: 12px; margin: 15px 0; border: 1px solid var(--apple-border); border-radius: 8px; font-size: 16px;">
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button id="verifyCancel" style="padding: 10px 20px; background: var(--apple-border); color: var(--apple-primary); border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">取消</button>
+        <button id="verifySubmit" style="padding: 10px 20px; background: var(--apple-primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">验证</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Apple-style Footer -->
   <footer class="apple-footer">
     <div class="container">
@@ -335,6 +349,72 @@
   </footer>
 
   <script>
+    // 下载验证功能
+    let pendingDownloadUrl = '';
+    
+    // 为所有下载链接添加点击事件
+    document.querySelectorAll('a[download="下载专辑"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认下载行为
+        
+        // 获取对应的SHA256校验码
+        const hashElement = this.parentElement.querySelector('p:nth-of-type(2)');
+        const fullHash = hashElement.textContent.replace('SHA256: ', '').trim();
+        
+        // 存储待下载的URL
+        pendingDownloadUrl = this.getAttribute('href');
+        
+        // 显示模态框并设置校验码
+        const verifyModal = document.getElementById('verifyModal');
+        const verifyHash = document.getElementById('verifyHash');
+        verifyHash.textContent = fullHash;
+        verifyModal.style.display = 'block';
+        
+        // 清空并聚焦输入框
+        document.getElementById('verifyInput').value = '';
+        document.getElementById('verifyInput').focus();
+      });
+    });
+    
+    // 关闭模态框
+    document.getElementById('verifyCancel').addEventListener('click', function() {
+      document.getElementById('verifyModal').style.display = 'none';
+      pendingDownloadUrl = '';
+    });
+    
+    // 验证提交
+    document.getElementById('verifySubmit').addEventListener('click', function() {
+      const input = document.getElementById('verifyInput').value.trim().toLowerCase();
+      const fullHash = document.getElementById('verifyHash').textContent.trim().toLowerCase();
+      
+      // 检查输入的前8位是否匹配
+      if (input === fullHash.substring(0, 8)) {
+        // 验证通过，执行下载
+        const link = document.createElement('a');
+        link.href = pendingDownloadUrl;
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // 关闭模态框
+        document.getElementById('verifyModal').style.display = 'none';
+        pendingDownloadUrl = '';
+      } else {
+        // 验证失败
+        alert('校验码错误，请重新输入！');
+      }
+    });
+    
+    // 点击模态框外部关闭
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('verifyModal');
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        pendingDownloadUrl = '';
+      }
+    });
+    
     // 移动设备菜单切换
     document.getElementById('navToggle').addEventListener('click', function() {
       const nav = document.getElementById('nav');
