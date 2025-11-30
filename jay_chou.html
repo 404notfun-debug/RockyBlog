@@ -62,9 +62,51 @@
       transform: scale(1.05);
     }
     
+    /* 下载按钮样式 */
+    .download-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .download-btn {
+      flex: 1;
+      padding: 8px 12px;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn.lanzou {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    
+    .download-btn.lanzou:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+    }
+    
+    .download-btn.github {
+      background-color: #24292e;
+      color: white;
+    }
+    
+    .download-btn.github:hover {
+      background-color: #2b3137;
+      transform: translateY(-2px);
+    }
+    
     @media (max-width: 768px) {
       .album-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .download-buttons {
+        flex-direction: column;
       }
     }
   </style>
@@ -105,7 +147,6 @@
       <div class="container">
         <h2 class="apple-section-title apple-fade-in">专辑列表</h2>
         <p class="apple-content apple-fade-in apple-fade-in-delay-1">以下是周杰伦的经典专辑合集，按发行年份排序：</p>
-        <p class="apple-content apple-fade-in apple-fade-in-delay-1">请先下载steam community 302： <a href="https://www.dogfight360.com/blog/wp-content/uploads/2025/10/steamcommunity_302_AMD64_V13.0.07_fix.zip" class="apple-link apple-link-underline" download>steamcommunity_302_AMD64_V13.0.07_fix.zip</a></p>
         
         <div class="album-grid apple-fade-in apple-fade-in-delay-2">
           <!-- 2000 -->
@@ -113,19 +154,11 @@
             <div class="album-year">2000.11</div>
             <h3 class="album-title">Jay</h3>
             <p>周杰伦首张同名专辑，包含《可爱女人》、《星晴》等经典歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 8cd8b0fe1f26f4e27f7b157724fae197b3d3c1bcf03674213a2777976466cc5e</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 99.3 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2000.11-Jay.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2001 -->
-          <div class="album-card">
-            <div class="album-year">2001.12</div>
-            <h3 class="album-title">范特西PLUS</h3>
-            <p>范特西专辑的改版，包含额外收录的曲目。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 22562a1fd94629152473ed13e9c59ae794b79a4c060e0cf229937b0b7c434fad</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 27.1 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2001.12-范特西PLUS.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 99.3 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 8cd8b0fe1f26f4e27f7b157724fae197b3d3c1bcf03674213a2777976466cc5e</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2001 -->
@@ -133,9 +166,11 @@
             <div class="album-year">2001.09</div>
             <h3 class="album-title">范特西 Fantasy</h3>
             <p>第二张专辑，收录《双截棍》、《简单爱》等代表作。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: eab24d961c129e934b3935c81be42a240251babb43e9aed7ad236321fb6cc9fb</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 91.8 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2001.09-范特西.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 91.8 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: eab24d961c129e934b3935c81be42a240251babb43e9aed7ad236321fb6cc9fb</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2002 -->
@@ -143,19 +178,11 @@
             <div class="album-year">2002.07</div>
             <h3 class="album-title">八度空间</h3>
             <p>第三张专辑，包含《半岛铁盒》、《龙拳》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 79fd1655f93a470cb2a013d6148adf56ea7ea21c524d01a9e919a54598871fc8</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 100 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2002.07-八度空间.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2002 -->
-          <div class="album-card">
-            <div class="album-year">2002.10</div>
-            <h3 class="album-title">The One演唱会 Live</h3>
-            <p>周杰伦首场演唱会现场录音专辑。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: e8bd15cc4998d737b0d1b36861b496abd85231404418ab4342c20e526a1d1030</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 213 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2002.10-The One演唱会 Live.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 100 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 79fd1655f93a470cb2a013d6148adf56ea7ea21c524d01a9e919a54598871fc8</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2003 -->
@@ -163,19 +190,11 @@
             <div class="album-year">2003.07</div>
             <h3 class="album-title">叶惠美</h3>
             <p>第四张专辑，收录《晴天》、《以父之名》等经典。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 3cd3e084a7db965cc2cf445a798f39579195efebe6b42104c0783fbdbb671271</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 111 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2003.07-叶惠美.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2003 -->
-          <div class="album-card">
-            <div class="album-year">2003.11</div>
-            <h3 class="album-title">寻找周杰伦</h3>
-            <p>同名电影原声带专辑。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: faa395bf63b22cedc4dd3758cb7cdcede94cdb7720e2f7c9a0048b3ac6995131</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 47.3 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2003.11-寻找周杰伦.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 111 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 3cd3e084a7db965cc2cf445a798f39579195efebe6b42104c0783fbdbb671271</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2004 -->
@@ -183,9 +202,11 @@
             <div class="album-year">2004.08</div>
             <h3 class="album-title">七里香</h3>
             <p>第五张专辑，同名歌曲《七里香》广为传唱。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 276026a820d10c4a805e918c10f47e794d10a38f4e24e6c34d225440b5008b2b</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 99.3 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2004.08-七里香.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 99.3 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 276026a820d10c4a805e918c10f47e794d10a38f4e24e6c34d225440b5008b2b</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2005 -->
@@ -193,29 +214,11 @@
             <div class="album-year">2005.11</div>
             <h3 class="album-title">十一月的萧邦</h3>
             <p>第六张专辑，收录《夜曲》、《发如雪》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 3dbc46cd0d252af12ba3d0d15e479dc2d43708ad7034a8b24f758c4eb1cbe28f</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 120 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2005.11-十一月的萧邦.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2006 -->
-          <div class="album-card">
-            <div class="album-year">2006.01</div>
-            <h3 class="album-title">霍元甲</h3>
-            <p>电影《霍元甲》主题曲专辑。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 0fa2951e71e1eae7d72b9bd2787e2c274ce74fda8c13fd1caa30d6b31ead5609</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 21.1 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2006.01-霍元甲.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2006 -->
-          <div class="album-card">
-            <div class="album-year">2006.09</div>
-            <h3 class="album-title">依然范特西</h3>
-            <p>专辑延续范特西风格，收录《千里之外》、《本草纲目》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 67aede566472c1fb7ba70af4b8683617fda88d73703adf820eb8bcd72e7dc39f</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 97.7 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2006.09-依然范特西.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 120 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 3dbc46cd0d252af12ba3d0d15e479dc2d43708ad7034a8b24f758c4eb1cbe28f</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2006 -->
@@ -223,9 +226,11 @@
             <div class="album-year">2006.12</div>
             <h3 class="album-title">黄金甲</h3>
             <p>专辑同名歌曲为电影《满城尽带黄金甲》主题曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: d4fb24bdac74a5056bf07a00c6b66c663c488f622729c5e6e141f370529ecdee</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 8.26 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2006.12-黄金甲.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 8.26 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: d4fb24bdac74a5056bf07a00c6b66c663c488f622729c5e6e141f370529ecdee</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2008 -->
@@ -233,9 +238,11 @@
             <div class="album-year">2008.01</div>
             <h3 class="album-title">大灌篮 电影原声带</h3>
             <p>电影《大灌篮》的原声音乐专辑。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 1e33b9f0a613b022b3bdf703e530b2235a1e4eee0aebdb0556fdcb1130fd8b00</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 7.73 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2008.01-大灌篮 电影原声带.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 7.73 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 1e33b9f0a613b022b3bdf703e530b2235a1e4eee0aebdb0556fdcb1130fd8b00</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2008 -->
@@ -243,51 +250,11 @@
             <div class="album-year">2008.10</div>
             <h3 class="album-title">魔杰座</h3>
             <p>专辑收录《稻香》、《给我一首歌的时间》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 2f796c0ba7f2f4cad57e01c46cdab1bd7073895b18d9c8fb05f6bd2568e3b67e</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 103 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2008.10-魔杰座.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2010 -->
-          <div class="album-card">
-            <div class="album-year">2010.05</div>
-            <h3 class="album-title">跨时代</h3>
-            <p>专辑收录《跨时代》、《烟花易冷》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 36840f742cd0c8cde723f93cbdc60e444e1872b5eb055293d53498b4897a8fae</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 106 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2010.05-跨时代.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-
-          
-          <!-- 2011 -->
-          <div class="album-card">
-            <div class="album-year">2011.11</div>
-            <h3 class="album-title">惊叹号</h3>
-            <p>专辑收录《惊叹号》、《水手怕水》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 671f21340e4561219644298f473918baea1c5ad8bd5840ddb256e9dca7dc1a9f</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 91 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2011.11-惊叹号.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2016 -->
-          <div class="album-card">
-            <div class="album-year">2016.06</div>
-            <h3 class="album-title">周杰伦的床边故事</h3>
-            <p>专辑收录《床边故事》、《告白气球》等歌曲。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 54aaa7c4607a6d3855820b2512244c9b8d9dba94114299d25517e8b1d53cfd3f</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 87.6 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2016.06-床边故事.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2019 -->
-          <div class="album-card">
-            <div class="album-year">2019.11</div>
-            <h3 class="album-title">地表最强世界巡回演唱会 Live</h3>
-            <p>地表最强世界巡回演唱会现场录音专辑。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: 060dbe59fbfd7ee1cda39024821021a6fbd861e8204573fb5d603f975fb829e5</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 206 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2019.11-地表最强世界巡回演唱会 Live.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 103 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: 2f796c0ba7f2f4cad57e01c46cdab1bd7073895b18d9c8fb05f6bd2568e3b67e</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
           
           <!-- 2022 -->
@@ -295,30 +262,29 @@
             <div class="album-year">2022.07</div>
             <h3 class="album-title">最伟大的作品</h3>
             <p>最新专辑，同名歌曲《最伟大的作品》展现音乐才华。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: b812432b7bc72e74e95bee841b7bfee107669871e967048d36baa67be76ec00d</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 102 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2022.07-最伟大的作品.rar" class="apple-link apple-link-underline download-album" download>下载专辑</a>
-          </div>
-          
-          <!-- 2022 -->
-          <div class="album-card">
-            <div class="album-year">2022.07</div>
-            <h3 class="album-title">最伟大的作品 (7z格式)</h3>
-            <p>最新专辑的7z压缩格式版本。</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">SHA256: d5d530a08061c8f6ffcc37bc98c80cba5d1331f52f07a3069ac255b6fd53140f</p>
-            <p style="font-size: 12px; color: #666; margin: 8px 0;">大小: 101 MB</p>
-            <a href="https://github.com/404notfun-debug/RockyBlog/releases/download/1/2022.07-最伟大的作品.7z" class="apple-link apple-link-underline download-album" download>下载专辑</a>
+            <p style="font-size: 13px; color: #666;">文件大小: 102 MB</p>
+            <p style="font-size: 13px; color: #666;">SHA256: b812432b7bc72e74e95bee841b7bfee107669871e967048d36baa67be76ec00d</p>
+            <div class="download-buttons">
+              <a href="https://github.com/404notfun-debug/RockyBlog/releases" class="download-btn github" target="_blank">GitHub Releases 下载</a>
+            </div>
           </div>
         </div>
         
+        <div class="download-note" style="margin: 30px 0; padding: 20px; background: rgba(245, 245, 245, 0.7); border-radius: 8px; text-align: center;">
+      <h4 style="margin-top: 0; margin-bottom: 10px;">下载链接说明</h4>
+      <p style="color: #666; margin-bottom: 8px;">📌 注意事项：</p>
+      <p style="color: #666; margin-bottom: 8px;">• 所有资源均来自网络，仅供试听学习，版权归原作者所有</p>
+      <p style="color: #666; margin-bottom: 8px;">• 所有专辑文件现已迁移至GitHub Releases页面</p>
+      <p style="color: #666; margin-bottom: 8px;">• 每个专辑文件都提供了SHA256校验和，请下载后验证文件完整性</p>
+      <p style="color: #666; margin-bottom: 0;">• 文件格式为.rar，下载后请使用解压软件打开</p>
+    </div>
+        
         <div class="center-button">
-          <a href="index.html" class="back-button">返回主页</a>
+          <a href="index.html" class="back-button">返回首页</a>
         </div>
       </div>
     </section>
   </main>
-
-
 
   <!-- Apple-style Footer -->
   <footer class="apple-footer">
@@ -330,8 +296,6 @@
   </footer>
 
   <script>
-
-    
     // 移动设备菜单切换
     document.getElementById('navToggle').addEventListener('click', function() {
       const nav = document.getElementById('nav');
